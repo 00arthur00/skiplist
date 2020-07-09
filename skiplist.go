@@ -47,7 +47,7 @@ func (s *SkipList) getLTPath(key string) []*Node {
 func (s *SkipList) Insert(key, value string) {
 	path := s.getLTPath(key)
 
-	x := path[0]
+	x := path[len(path)-1]
 	if x.Forward[0] != nil && x.Forward[0].Key == key {
 		x.Forward[0].Value = value
 		return
